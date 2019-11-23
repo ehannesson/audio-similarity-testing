@@ -197,9 +197,14 @@ def base_scrape(base_url='https://blogs.law.gwu.edu/mcir/cases/', link_df=None,
     if save:
         with open('data/gen_df', 'wb') as f:
             pickle.dump(gen_df, f)
+        with open('data/gen_df.csv', 'w+') as f:
+            pd.to_csv(f)
+
         with open('data/link_df', 'wb') as f:
             pickle.dump(link_df, f)
-
+        with open('data/link_df.csv', 'w+') as f:
+            pd.to_csv(f)
+            
     return gen_df, link_df
 
 
