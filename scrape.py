@@ -83,7 +83,7 @@ def scrape_link_info(row, case, verbose=False):
                 # if this contains the hyperlink, get it
                 href_temp = item.find(href=re.compile(r'http'))
 
-                if re.match('Hear Sound Recording', href_temp.text):
+                if re.match('([Hh]ear|[Aa]udio)', href_temp.text):
                     # if this link contains some sort of audio data, get link
                     cur_link = href_temp.get('href')
                     clean_temp.append(cur_link)
